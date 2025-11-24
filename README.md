@@ -30,11 +30,6 @@ Base Template API:
     ```
 
 
-4. **Run API**
-    ```bash
-    make run
-    ```
-
 Server is running in `http://localhost:8000/`
 
 Go to `http://localhost:8000/docs` for a swagger UI showing all endpoints and response models with documentation.
