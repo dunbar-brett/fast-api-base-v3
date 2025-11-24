@@ -24,11 +24,17 @@ def add_item(payload: ItemCreate, db: Session = Depends(get_db)):
 
 @router.get("/user/{user_id}", response_model=List[ItemOut])
 def get_users_items(user_id: int, db: Session = Depends(get_db)):
-    items = list_items_for_user(db, user_id)
-    return items
+    try:
+        items = list_items_for_user(db, user_id)
+        return items
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
 
 
 @router.get("/all", response_model=List[ItemOut])
 def get_all_items(db: Session = Depends(get_db)):
-    items = list_items(db)
-    return items
+    try:
+        items = list_items(db)
+        return items
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
