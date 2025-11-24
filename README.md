@@ -1,7 +1,7 @@
 # Base Template API (FastAPI)
 
 Base Template API:
-- FastAPI-based usage-record endpoint
+- FastAPI basic todo app
 - Tests using pytest
 
 ## Prerequisites
@@ -24,14 +24,16 @@ Base Template API:
     make build-db
     ```
 
-2. **Run API locally**
+3. **Run API locally**
     ```bash
     make run
     ```
 
 
-3. **Run API**
-`make run`
+4. **Run API**
+    ```bash
+    make run
+    ```
 
 Server is running in `http://localhost:8000/`
 
@@ -42,57 +44,56 @@ Go to `http://localhost:8000/docs` for a swagger UI showing all endpoints and re
 
 **Run Tests**
 
-    While DB container is running, creating tables and seeding is recommended but not required.
+While DB container is running, creating tables and seeding is recommended but not required.
 
-    ```bash
-    make test
-    ```
+```bash
+make test
+```
 
 **Run coverage for tests**
 
-    ```bash
-    make coverage
-    ```
+```bash
+make coverage
+```
 
-    To open coverage report in browser
+**To open coverage report in browser**
 
-    ```bash
-    make show-coverage
-    ```
+```bash
+make show-coverage
+```
 
 **Make DB tables in Container**
 
-    ```bash
-    make create-tables
-    ```
+```bash
+make create-tables
+```
 
 **Seed DB in Container**
 
-    ```bash
-    make seed
-    ```
+```bash
+make seed
+```
 
 **Start DB in container**
 
-    ```bash
-    make db
-    ```
+```bash
+make db
+```
 
 **Make DB tables in Container**
 
-    ```bash
-    make create-tables
-    ```
+```bash
+make create-tables
+```
 
 **Seed DB in Container**
 
-    ```bash
-    make seed
-    ```
+```bash
+make seed
+```
 
 **Create Tables and Seed DB in Container and start API locally**
 
-    create-tables
-    ```bash
-    make dev
-    ```
+```bash
+make dev
+```
