@@ -41,48 +41,57 @@ Go to `http://localhost:8000/docs` for a swagger UI showing all endpoints and re
 ## Other Useful Make commands
 
 **Run Tests**
+
     While DB container is running, creating tables and seeding is recommended but not required.
+
     ```bash
     make test
     ```
 
 **Run coverage for tests**
+
     ```bash
     make coverage
     ```
 
     To open coverage report in browser
+
     ```bash
     make show-coverage
     ```
 
 **Make DB tables in Container**
+
     ```bash
     make create-tables
     ```
 
 **Seed DB in Container**
+
     ```bash
     make seed
     ```
 
-
 **Start DB in container**
+
     ```bash
     make db
     ```
 
 **Make DB tables in Container**
+
     ```bash
     make create-tables
     ```
 
 **Seed DB in Container**
+
     ```bash
     make seed
     ```
 
 **Create Tables and Seed DB in Container and start API locally**
+
     create-tables
     ```bash
     make dev
