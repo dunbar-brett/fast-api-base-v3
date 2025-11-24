@@ -14,7 +14,7 @@ db:
 	docker-compose up -d db
 
 recreate-db:
-
+	poetry run python utils/recreate_and_seed.py
 
 create-tables:
 	poetry run python utils/create_tables.py
@@ -24,22 +24,18 @@ seed:
 
 build-db:
 	docker-compose up --build -d db
-	${MAKE} create-tables
-	wait 3
-	${MAKE} seed
 
 
 down:
 	docker-compose down
 
-run:  ## Run API with uvicorn
+dev:  ## Run API with uvicorn
 	poetry run python -m uvicorn todo_app.main:app --reload --host 0.0.0.0 --port 8000
 
-dev:  ## Run API with uvicorn after creating tables and seeding DB
-	${MAKE} create-tables
-	${MAKE} seed
+run:  ## Run API with uvicorn after creating tables and seeding DB
+	${MAKE} recreate-db
 	poetry run python -m uvicorn todo_app.main:app --reload --host 0.0.0.0 --port 8000
-	
+
 format:
 	$(ISORT) $(FOLDERS)
 	$(BLACK) $(FOLDERS)

@@ -39,7 +39,6 @@ Go to `http://localhost:8000/docs` for a swagger UI showing all endpoints and re
 
 **Run Tests**
 
-While DB container is running, creating tables and seeding is recommended but not required.
 
 ```bash
 make test
